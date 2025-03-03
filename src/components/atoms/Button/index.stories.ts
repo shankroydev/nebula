@@ -30,10 +30,18 @@ export const Header: Story = {
   },
 };
 
+export const MediumContained: Story = {
+  args: {
+    buttonType: "mediumContained",
+    children: "Get a free trial",
+    btnTextColor: "black",
+  },
+};
+
 export const Medium: Story = {
   args: {
     buttonType: "medium",
-    children: "Get a free trial",
-    btnTextColor: "black",
+    children: "Book a demo call",
+    btnTextColor: "white",
   },
 };

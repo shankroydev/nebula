@@ -4,14 +4,16 @@ declare module "@mui/material/styles" {
   interface TypographyVariants {
     headerButton: React.CSSProperties;
     mediumButton: React.CSSProperties;
-    title: React.CSSProperties;
+    logo: React.CSSProperties;
+    heroText: React.CSSProperties;
   }
 
   // allow configuration using `createTheme()`
   interface TypographyVariantsOptions {
     headerButton?: React.CSSProperties;
     mediumButton?: React.CSSProperties;
-    title?: React.CSSProperties;
+    logo?: React.CSSProperties;
+    heroText?: React.CSSProperties;
   }
 }
 
@@ -20,7 +22,8 @@ declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
     headerButton: true;
     mediumButton: true;
-    title: true;
+    logo: true;
+    heroText: true;
   }
 }
 
@@ -45,6 +48,24 @@ const theme = createTheme({
       fontFamily: "Poppins",
       fontSize: 20,
       fontWeight: 400,
+      lineHeight: "126.5%",
+    },
+    body1: {
+      fontFamily: "Poppins",
+      fontSize: 32,
+      fontWeight: 400,
+      lineHeight: "126.5%",
+      letterSpacing: "0%",
+    },
+    logo: {
+      fontFamily: "Syne",
+      fontSize: 32,
+      fontWeight: 700,
+    },
+    heroText: {
+      fontFamily: "Syne",
+      fontSize: 125,
+      fontWeight: 600,
     },
   },
   palette: {

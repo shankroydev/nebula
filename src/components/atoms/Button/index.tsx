@@ -37,15 +37,23 @@ function Button({
     disableRipple = true;
     buttonTextColor = "headerButton";
     bgColor = "transparent";
+    paddingX = "0";
+    paddingY = "0";
   } else if (buttonType == "medium") {
     variant = "outlined";
+    bgColor = backgroundColor ? backgroundColor : "transparent";
+    typographyVariant = "mediumButton";
+    paddingX = "48px";
+    paddingY = "20px";
+    borderRadius = "12px";
+    border = `1px solid ${btnTextColor}`;
+  } else if (buttonType == "mediumContained") {
+    variant = "contained";
     bgColor = backgroundColor ? backgroundColor : "white";
     typographyVariant = "mediumButton";
     paddingX = "48px";
     paddingY = "21px";
     borderRadius = "12px";
-  } else if (buttonType == "mediumContained") {
-    variant = "contained";
   }
 
   return (
@@ -58,14 +66,16 @@ function Button({
         paddingX,
         paddingY,
         borderRadius,
+        lineHeight: 1,
         "&:hover": {
           backgroundColor: bgColor,
         },
         "& .MuiTouchRipple-child": {
-          backgroundColor: "grey",
+          backgroundColor: btnTextColor,
         },
+        boxSizing: "border-box",
       }}
-      disableRipple={disableRipple}
+      disableRipple={true}
       disableTouchRipple={disableRipple}
       {...btnProps}
     >
