@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
         loader: "esbuild-loader",
         options: {
@@ -19,7 +19,7 @@ module.exports = {
           jsx: "automatic",
         },
         resolve: {
-          extensions: [".ts", ".tsx", ".js", ".json"],
+          extensions: [".ts", ".tsx", ".js", ".json", ".jsx"],
         },
       },
       {
@@ -30,7 +30,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|mp4)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
           },
         ],
       },

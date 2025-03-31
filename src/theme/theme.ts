@@ -6,6 +6,8 @@ declare module "@mui/material/styles" {
     mediumButton: React.CSSProperties;
     logo: React.CSSProperties;
     heroText: React.CSSProperties;
+    heading2: React.CSSProperties;
+    heading3: React.CSSProperties;
   }
 
   // allow configuration using `createTheme()`
@@ -14,6 +16,8 @@ declare module "@mui/material/styles" {
     mediumButton?: React.CSSProperties;
     logo?: React.CSSProperties;
     heroText?: React.CSSProperties;
+    heading2?: React.CSSProperties;
+    heading3?: React.CSSProperties;
   }
 }
 
@@ -24,16 +28,20 @@ declare module "@mui/material/Typography" {
     mediumButton: true;
     logo: true;
     heroText: true;
+    heading2: true;
+    heading3: true;
   }
 }
 
 declare module "@mui/material/styles" {
   interface Palette {
     headerButton: Palette["primary"];
+    pageBg: Palette["primary"];
   }
 
   interface PaletteOptions {
     headerButton?: PaletteOptions["primary"];
+    pageBg?: PaletteOptions["primary"];
   }
 }
 
@@ -67,10 +75,26 @@ const theme = createTheme({
       fontSize: 125,
       fontWeight: 600,
     },
+    heading2: {
+      fontFamily: "Poppins",
+      fontSize: 32,
+      fontWeight: 600,
+      lineHeight: "126.5%",
+      letterSpacing: "0%",
+    },
+    heading3: {
+      fontFamily: "Syne",
+      fontSize: 86,
+      fontWeight: 500,
+      lineHeight: 1,
+    },
   },
   palette: {
     headerButton: {
       main: "#101010",
+    },
+    pageBg: {
+      main: "#f0f0f0",
     },
   },
 });
