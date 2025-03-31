@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 const prod = process.env.NODE_ENV === "production";
@@ -42,10 +43,15 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: "./index.html",
     }),
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "public", to: "" }, //to the dist root directory
+      ],
     }),
   ],
 };
